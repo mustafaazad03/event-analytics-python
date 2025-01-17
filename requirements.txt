@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+transformers
+torch
+numpy
+pydantic
+pydantic-settings
+PyJWT
