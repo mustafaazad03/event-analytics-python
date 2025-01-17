@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from core.config import get_settings
-from api.endpoints import sentiment
+from app.core.config import get_settings
+from app.api.endpoints import sentiment
 
 settings = get_settings()
 

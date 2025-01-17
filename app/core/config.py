@@ -1,5 +1,8 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Event Analytics Microservice"
@@ -15,11 +18,11 @@ class Settings(BaseSettings):
     PORT: int = 8000
     
     # Security
-    SECRET_KEY: str = "your-secret-key"
+    SECRET_KEY: str = os.getenv("SECRET_KEY")
     ALGORITHM: str = "HS256"
     
     # Database
-    DATABASE_URL: str = "postgresql://user:password@localhost:5432/eventdb"
+    DATABASE_URL: str = os.getenv("DATABASE_URL")
     
     class Config:
         env_file = ".env"

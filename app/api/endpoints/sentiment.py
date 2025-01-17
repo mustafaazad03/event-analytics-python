@@ -1,14 +1,14 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List
-from models.sentiment import (
+from app.models.sentiment import (
     SentimentRequest,
     SentimentResponse,
     EngagementRequest,
     EngagementResponse
 )
-from services.sentiment_analyzer import SentimentAnalyzer
-from services.engagement_calculator import EngagementCalculator
-from core.logger import setup_logger
+from app.services.sentiment_analyzer import SentimentAnalyzer
+from app.services.engagement_calculator import EngagementCalculator
+from app.core.logger import setup_logger
 
 router = APIRouter()
 logger = setup_logger("sentiment_endpoint")
